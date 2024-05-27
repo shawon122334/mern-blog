@@ -6,10 +6,13 @@ import Dashboard from "../src/pages/Dashboard";
 import Projects from "../src/pages/Projects";
 import Signin from "../src/pages/Signin";
 import Signup from "../src/pages/Signup";
+import Header from "./components/Header";
+
 
 export default function App() {
   return (
     <BrowserRouter>
+      <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
