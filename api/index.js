@@ -2,11 +2,15 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRoutes from './routes/user.route.js';
+import userSignup from './routes/user.signup.js';
+
+
 
 // installed dotenv and imported so we can use .env in backend
 dotenv.config();
 
 const app = express();
+app.use(express.json());
 //DB connection
 mongoose
     .connect(process.env.MONGODB_URL)
@@ -22,3 +26,4 @@ app.listen(3000,()=>{
 })
 
 app.use('/api/user',userRoutes);
+app.use('/api/user',userSignup);
